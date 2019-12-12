@@ -71,8 +71,9 @@ def all_supplies_in_holidays(holiday_hash)
     holidays.each do |holiday, supplies|
       fixed = holiday.to_s
       if fixed.include?("_")
-        array = fixed.split("_").each do |word|
-          word.capitalize
+        array = []
+        fixed.split("_").each do |word|
+          array << word.capitalize
         end
         fixed = array.join(" ")
       else
