@@ -29,24 +29,28 @@ def add_supply_to_winter_holidays(holiday_hash, supply)
   # Christmas AND the New Year's arrays
   holiday_hash.each_value do |holiday|
     if holiday.keys.include?(:fourth_of_july)
-      return holiday[:fourth_of_july] << supply
+      holiday[:fourth_of_july] << supply
     elsif holiday.keys.include?(:christmas)
-      return holiday[:christmas] << supply
+      holiday[:christmas] << supply
     end
   end
+  holiday_hash
 end
 
 
 def add_supply_to_memorial_day(holiday_hash, supply)
   # again, holiday_hash is the same as the ones above
   # add the second argument to the memorial day array
-
+  holiday_hash.each_value do |holiday|
+    holiday[:memorial_day] << supply if holiday.keys.include?(:memorial_day)
+  end
+  holiday_hash
 end
 
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   # code here
   # remember to return the updated hash
-
+  holiday_hash[season][holiday_name] => supply_array
 end
 
 def all_winter_holiday_supplies(holiday_hash)
