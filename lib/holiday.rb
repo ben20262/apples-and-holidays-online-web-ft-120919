@@ -28,8 +28,8 @@ def add_supply_to_winter_holidays(holiday_hash, supply)
   # add the second argument, which is a supply, to BOTH the
   # Christmas AND the New Year's arrays
   holiday_hash.each_value do |holiday|
-    if holiday.keys.include?(:fourth_of_july)
-      holiday[:fourth_of_july] << supply
+    if holiday.keys.include?(:new_years)
+      holiday[:new_years] << supply
     elsif holiday.keys.include?(:christmas)
       holiday[:christmas] << supply
     end
@@ -67,7 +67,7 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-
+  
 end
 
 def all_holidays_with_bbq(holiday_hash)
